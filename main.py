@@ -10,7 +10,7 @@ archivos_xlsx = [archivo for archivo in archivos if archivo.endswith('.xlsx') an
 
 df_ = pd.read_excel(os.path.join(ruta, archivos_xlsx[0]), sheet_name='Hoja 1', engine='openpyxl')
 df_ = df_[df_['ano_ingreso0'].isnull() == False]
-# quieor una figura violin de la columna nota y anon_ingreso
+
 plt.figure(figsize=(10, 6))
 import seaborn as sns
 sns.violinplot(x='ano_ingreso0', y='nota', data=df_)
